@@ -11,16 +11,23 @@
 </head>
 
 <body>
-    <div class="col-10 col-md-6 m-auto text-center mt-5">
+    <div class="col-10 col-md-5 m-auto text-center mt-5 shadow-lg p-3 rounded">
         <input type="text" class="form-control mb-2" placeholder="Enter Your Name" id="userName">
         <button class="btn btn-primary col-6" onclick="alertMyName()">Alert My Name</button>
     </div>
     <script>
         const alertMyName = () => {
+            if(userName.value==""){
+                Swal.fire({
+                icon: 'error',
+                text: `Enter Your Name`,
+            })
+            }else{
             Swal.fire({
                 icon: 'success',
                 text: `My Name is ${userName.value}`,
             })
+        }
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
